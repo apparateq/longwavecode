@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+function count() {
+   #samples=$(cat *$1*.lvc | grep -v ^# | grep -v "0.000,     0.000," | wc -l)
+   samples=$(cat *$1*.lvc | grep -v ^# | wc -l)
+   maxsamp=$(echo "$2*24*3600.0/1.44" | bc)
+   percent=$(echo "scale = 2; $samples*100.0/$maxsamp" | bc)
+   echo count: $samples/$maxsamp $percent
+}
+
+count "2018-01-" 31
+count "2018-02-" 28
+count "2018-03-" 31
+count "2018-04-" 30
+count "2018-05-" 31
+count "2018-06-" 30
+count "2018-07-" 31
+count "2018-08-" 31
+count "2018-09-" 30
+count "2018-10-" 31
+count "2018-11-" 30
+count "2018-12-" 31

@@ -1,2 +1,2 @@
-# longwavecode
-Python scripts for processing and visualising longwave phase and amplitude data
+# apparateq
+Scripts for reduction and analysis of long-wave data

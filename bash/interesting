@@ -1,0 +1,20 @@
+#!/bin/bash
+
+python plot_phaseandamp.py --idir /tmp/lw_filt -f lw_raw_dk_normal_time_2018-10-10_0000.lvc \
+    -s 'MSF RBU DCF77 TDF BBC' -b 6.0 -e 15.0 -a -110
+
+python plot_phaseandamp.py --idir /tmp/lw_conv -f lw_raw_dk_normal_time_2018-03-08_0000.lvc \
+    -s MSF -b 11.0 -e 13.0 -t 'MSF off-air for service from 10:00 to 14:00 UTC' -a -90
+#
+#python plot_phaseandamp.py --idir /tmp/lw_conv -f lw_raw_dk_normal_time_2018-09-10_0000.lvc \
+#     -s MSF -b 0.0 -e 24.0 -t 'MSF - scheduled maintenance?' -a -100
+#
+python plot_phaseandamp.py --idir /tmp/lw_conv -f lw_raw_dk_normal_time_2018-02-07_0000.lvc \
+   -s 'MSF RBU' -b 13.5 -e 16.0 -t 'Solar flare 2018-02-07' -v '14.52 14.78 14.9' -u
+# #
+#python plot_phaseandamp.py --idir /tmp/lw_conv -f lw_raw_dk_normal_time_2018-02-10_0000.lvc \
+#    -s 'MSF RBU' -b 13.45 -e 14.8 -t 'Solar flare 2018-02-10' -v '14.03 14.35 14.6'
+
+
+python plot_phaseandamp.py --idir /tmp/lw_conv -f lw_raw_dk_normal_time_2018-05-27_0000.lvc \
+   -s 'MSF RBU' -b 0.0 -e 5.0 -t 'Lightning strikes in UK' -u

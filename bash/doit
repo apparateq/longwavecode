@@ -1,0 +1,27 @@
+#!/bin/bash
+
+nfiles=${1:-10000000}
+
+#rm -fr /tmp/lw_*
+
+# CONVERSION
+#python3 convertraw.py --idir ~/Desktop/Apparateq --odir /tmp/lw_conv -n $nfiles
+#python convertraw.py --idir ~/Desktop/Apparateq --odir /tmp/lw_err --file Goertzel_DualFase_Døgn_Normaltid_18-10-16_0000_003.lwm
+
+#python3 filtersun.py --idir /tmp/lw_conv --odir /tmp/lw_filt
+
+# STATISTICS
+#python3 analyse.py --idir /tmp/lw_filt --odir /tmp/lw_stat
+
+# PLOTTING
+python3 plot_amplitude.py --idir /tmp/lw_conv --file lw_raw_dk_normal_time_2018-01-01_0000.lvc \
+        -s DCF77 -b 0 -e 24
+
+python3 plot_phaseandamp.py --idir /tmp/lw_conv --file lw_raw_dk_normal_time_2018-01-01_0000.lvc \
+        -s MSF -b 0 -e 24 -a -95
+python3 plot_phaseandamp.py --idir /tmp/lw_conv --file lw_raw_dk_normal_time_2018-01-01_0000.lvc \
+        -s MSF -b 0 -e 24 -a -95 -u
+
+python3 plot_stats.py --idir /tmp/lw_stat -s TDF -a aavg
+#
+python3 plot_multiple_phase.py --idir /tmp/lw_filt -s 'RBU'

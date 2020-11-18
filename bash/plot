@@ -1,0 +1,7 @@
+#!/bin/bash
+
+date=$1
+stn=$2
+
+python plot_phaseandamp.py --idir /tmp/lw_conv -f lw_raw_dk_normal_time_${date}_0000.lvc \
+    -s $stn -b 0.0 -e 24.0
